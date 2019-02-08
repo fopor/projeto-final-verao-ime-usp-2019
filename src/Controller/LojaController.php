@@ -15,10 +15,14 @@ class LojaController extends AbstractController {
 	*/
 	public function index() {
 		// seleciona dois itens aleatorios para exibir
+		$banco = new Banco();
+		$produtosParaExibir = $banco->getProdutoAleatorios(2);
+		$qtdProdutos = $banco->getQtdProdutosRegistrados();
 
 		return $this->render('loja/index.html.twig', [
 			"destaque" => [
-				"item2" => "o item 2"
+				"qtdProdutos" => $qtdProdutos,
+				"produtosParaExibir" => $produtosParaExibir
 			]
 		]);
 	}

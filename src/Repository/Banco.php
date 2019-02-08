@@ -102,4 +102,26 @@ class Banco {
 		return $cliente;
 	}
 
+	public function getQtdProdutosRegistrados(){
+		$strsql = "SELECT COUNT(*) FROM produtos;";
+
+		$qtdProdutos = $this->getResultsBD($strsql);
+		$qtdProdutos = $qtdProdutos->fetch_row();
+		$qtdProdutos = $qtdProdutos[0];
+		return (int)$qtdProdutos;
+	}
+
+	public function getProdutoAleatorios($qtd){
+		$strsql = "SELECT * FROM produtos ORDER BY RAND() LIMIT $qtd";
+
+		$resultados = $this->getResultsBD($strsql);
+
+		$produtos = array();
+		while ($linha = $resultados->fetch_object()) {
+			$produtos[] = $this->fetchProduto($linha);
+		}
+
+		return $produtos;
+	}
+
 }
