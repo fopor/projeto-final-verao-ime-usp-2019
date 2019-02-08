@@ -1,16 +1,16 @@
 Tarefas para o projeto final.
 
-* Clone este repositório para usar como base para o seu projeto.
-$ git clone https://github.com/diogojpina/projeto-final-verao-ime-usp-2019.git
-
-Entre na pasta do projeto e baixa as bibliotecas usando o comando:
+Instale as bibliotecas usando
 $ composer install
 
 Iniciailize o servidor do Symfony usando o comando
 $ php bin/console server:run
 
-As tarefas que precisam ser feitas são:
+## Tarefas já feitas:
+* 
 
+
+## Tarefas a fazer:
 * Colocar um cabeçalho com menu (nav-bar) em todas as páginas.
 
 * Página Inicial:
@@ -35,5 +35,4 @@ Tarefas-extras:
 * Mostrar os dados da tela de obrigado à partir dos dados salvos no banco de dados
 
 * Enviar um e-mail (SMTP) com a confirmação do pedido.
-
 
