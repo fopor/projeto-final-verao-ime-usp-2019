@@ -14,8 +14,12 @@ class LojaController extends AbstractController {
 	* @Route("/")
 	*/
 	public function index() {
+		// seleciona dois itens aleatorios para exibir
+
 		return $this->render('loja/index.html.twig', [
-					    
+			"destaque" => [
+				"item2" => "o item 2"
+			]
 		]);
 	}
 
