@@ -11,12 +11,10 @@ Iniciailize o servidor do Symfony usando o comando
 ## Tarefas já feitas:
 * Colocar um cabeçalho com menu (nav-bar) em todas as páginas.
 
-
-## Tarefas a fazer:
-
 * Página Inicial:
 Arrumar a página inicial para carregar dois produtos de forma aleatória.
 
+## Tarefas a fazer:
 * Buscar Produto: Receber o POST do campo de busca de produtos e exibir os produtos que tenham o termo pesquisado no nome ou na descrição. (Ver mysql like)
 
 * Carrinho de Compras: Permitir alterar a quantidade de um produto no carrinho de compra. Se a quantidade for 0, remover o produto do carrinho.
