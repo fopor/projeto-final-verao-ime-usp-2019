@@ -7,11 +7,11 @@ Iniciailize o servidor do Symfony usando o comando
 $ php bin/console server:run
 
 ## Tarefas já feitas:
-* 
+* Colocar um cabeçalho com menu (nav-bar) em todas as páginas.
 
 
 ## Tarefas a fazer:
-* Colocar um cabeçalho com menu (nav-bar) em todas as páginas.
+* Aplicar CSS a todas as páginas
 
 * Página Inicial:
 - Arrumar a página inicial para carregar dois produtos de forma aleatória.
