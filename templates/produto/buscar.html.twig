@@ -1,5 +1,8 @@
-{% include ('styles.html.twig') %}
-{% include ('navbar.html.twig') %}  <br><br><br>
+{% extends 'base.html.twig' %}
+
+{% block title %}Busca feita!{% endblock %}
+
+{% block body %}
 
 <h2>Mostrando resultado para XXXXXXX</h2>
 
@@ -24,3 +27,5 @@ Descrição do Produto.......
 R$ XXXXX,XX
 <br />
 <a href="/produto/1">Ver Detalhes</a>
+
+{% endblock %}

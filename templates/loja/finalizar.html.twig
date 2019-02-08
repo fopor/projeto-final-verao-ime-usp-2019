@@ -1,7 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Finalizar pedido{% endblock %}
+
+{% block body %}
+
 {{ msg_erro }}
 
-{% include ('styles.html.twig') %}
-  {% include ('navbar.html.twig') %} <br><br><br>
 
 <form method="post">
 E-mail:
@@ -14,3 +18,5 @@ Senha:
 </form>
 
 <a href="/cliente/form"> Não sou cadastrado.</a>
+
+{% endblock %}

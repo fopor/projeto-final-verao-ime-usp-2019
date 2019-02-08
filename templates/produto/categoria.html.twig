@@ -1,7 +1,10 @@
-{% include ('styles.html.twig') %}
-{% include ('navbar.html.twig') %}  <br><br><br>
+{% extends 'base.html.twig' %}
 
-<h2>Título da Categoria</h2>
+{% block title %}{{nomeDaCategoria}}{% endblock %}
+
+{% block body %}
+
+<h2>Exibindo: {{nomeDaCategoria}}</h2>
 
 {% for produto in produtos %}
 
@@ -17,5 +20,4 @@ R$ {{ produto.preco }}
 
 {% endfor %}
 
-
-
+{% endblock %}

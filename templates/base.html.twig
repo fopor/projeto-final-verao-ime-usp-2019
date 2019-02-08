@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
     {% include ('styles.html.twig') %}
-    {% include ('navbar.html.twig') %}
     <title>{% block title %}{% endblock %}</title>
 </head>
 
 <body>
+    {% include ('navbar.html.twig') %}
+    <br><br><br>
+
     <div id="content">
-        {% block body %}{% endblock %}
+        <div class="container">
+            {% block body %}{% endblock %}
+        </div>
     </div>
-
 </body>
-
 </html>

@@ -27,9 +27,14 @@ class ProdutoController extends AbstractController {
 	public function categoria($nome) {
 		$banco = new Banco();
 		$produtos = $banco->getProdutosByCategoria($nome);
+		$nomeFormatado = $nome;
+		$nomeFormatado = trim($nomeFormatado);
+		$nomeFormatado = strtolower($nomeFormatado);
+		$nomeFormatado = ucfirst($nomeFormatado);
 
 		return $this->render('produto/categoria.html.twig', [
-			'produtos' => $produtos    
+			'produtos' => $produtos,
+			'nomeDaCategoria' => $nomeFormatado
 		]);
 	}
 

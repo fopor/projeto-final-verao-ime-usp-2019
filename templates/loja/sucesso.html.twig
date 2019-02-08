@@ -1,5 +1,9 @@
-{% include ('styles.html.twig') %}
-{% include ('navbar.html.twig') %} <br><br><br>
+{% extends 'base.html.twig' %}
+
+{% block title %}Parabéns!{% endblock %}
+
+{% block body %}
+
 
 <h3>Parabéns {{ cliente.nome}}!</h3>
 
@@ -14,3 +18,5 @@ Total: {{ total }}
 
 <br /><br />
 Em breve, enviaremos um e-mail para {{ cliente.email }} com os detalhes da entrega!
+
+{% endblock %}

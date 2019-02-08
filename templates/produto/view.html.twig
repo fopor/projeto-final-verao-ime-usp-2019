@@ -1,5 +1,8 @@
-{% include ('styles.html.twig') %}
-{% include ('navbar.html.twig') %} <br><br><br>
+{% extends 'base.html.twig' %}
+
+{% block title %}Detalhes{% endblock %}
+
+{% block body %}
 
 <h2>{{ produto.nome }}</h2>
 <img src="/images/{{ produto.imagem }}" width="500">
@@ -12,3 +15,4 @@ R$ {{ produto.preco }}
 <a href="/carrinho/{{ produto.id }}">
     <input type="button" value="Comprar">
 </a>
+{% endblock %}

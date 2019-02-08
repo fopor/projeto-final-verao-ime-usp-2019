@@ -2,11 +2,9 @@
 
 {% block title %}Página Inicial{% endblock %}
 
-
 {% block body %}
 
 <h2>Produtos em Destaque<h2>
-    <div class="container">
       <br>
       <p>Exibindo dois grandes produtos do nosso total de {{destaque.qtdProdutos}}</p>
       {% for item in destaque.produtosParaExibir %}
@@ -20,7 +18,4 @@
         </div>
       </div>
       {% endfor %}
-
-    </div>
-
-    {% endblock %}
+{% endblock %}

@@ -1,8 +1,9 @@
-{% include ('styles.html.twig') %}
-{% include ('navbar.html.twig') %} <br><br><br>
+{% extends 'base.html.twig' %}
 
-<h2>Carrinho de Compras</h2>
+{% block title %}Carrinho de Compras{% endblock %}
 
+{% block body %}
+<div class="container">
 <table border="1" width="100%">
 	<thead>
 	<tr>
@@ -37,3 +38,6 @@ O total da sua compra é: R$ {{ total }}
 <a href="/loja/finalizar">
 <input type="button" value="Finalizar Pedido" />
 </a>
+</div>
+
+{% endblock %}
