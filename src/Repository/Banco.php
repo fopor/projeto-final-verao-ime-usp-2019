@@ -124,4 +124,21 @@ class Banco {
 		return $produtos;
 	}
 
+	public function buscaProduto($termoDeBusca) {
+		$strsql = "
+			SELECT * FROM produtos
+			WHERE nome LIKE '%$termoDeBusca%' 
+			OR descricao LIKE '%$termoDeBusca%';
+		";
+
+		$resultadoQuery = $this->getResultsBD($strsql);
+
+		$resultadoBusca = array();
+		while ($linha = $resultadoQuery->fetch_object()) {
+			$resultadoBusca[] = $this->fetchProduto($linha);
+		}
+
+		return $resultadoBusca;
+	}
+
 }

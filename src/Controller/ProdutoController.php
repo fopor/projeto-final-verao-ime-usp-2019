@@ -42,9 +42,24 @@ class ProdutoController extends AbstractController {
 	* @Route("/busca")
 	*/
 	public function buscar() {
+		$request = Request::createFromGlobals();
+		$request->query->get('id');
+		$termoDeBusca = $request->request->get('busca', '');
+
+		if($termoDeBusca == '') {
+			return $this->render('produto/erroAoBuscar.html.twig', [
+				'DescricaoErro' => "Nada foi procurado!"
+			]);
+		}
+
+		$banco = new Banco();
+		$produtosEncontrados = $banco->buscaProduto($termoDeBusca);
+
 		return $this->render('produto/buscar.html.twig', [
-					    
+			'termoDeBusca' => $termoDeBusca,
+			'produtosEncontrados' => $produtosEncontrados
 		]);
+
 	}
 
 
