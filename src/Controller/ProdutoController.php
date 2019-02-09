@@ -16,7 +16,7 @@ class ProdutoController extends AbstractController {
 		$banco = new Banco();
 		$produto = $banco->getProduto($id);
 		
-		return $this->render('produto/view.html.twig', [
+		return $this->render('produto/detalhes-produtos.html.twig', [
 			'produto' => $produto		    
 		]);
 	}

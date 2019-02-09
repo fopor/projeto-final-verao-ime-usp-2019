@@ -6,18 +6,18 @@
 
 <h2>Exibindo: {{nomeDaCategoria}}</h2>
 
-{% for produto in produtos %}
-
-<h3>{{ produto.nome }}</h3>
-<img src="/images/{{ produto.imagem }}" width="300">
-<br />
-{{ produto.descricao }}
-<br /><br />
-
-R$ {{ produto.preco }}
-<br />
-<a href="/produto/{{ produto.id }}">Ver Detalhes</a>
-
+{% for item in produtos %}
+    <BR>
+    <div class="card" style="width: 18rem;">
+        <img class="card-img-top" src="/images/{{item.imagem}}">
+        <div class="card-body">
+            <h5 class="card-title">{{item.nome}}</h5>
+            <h6 class="card-text">{{item.descricao}}</h6>
+            <a href="/produto/{{item.id}}" class="btn btn-primary">Detalhes</a>
+        </div>
+    </div>
 {% endfor %}
+
+
 
 {% endblock %}
