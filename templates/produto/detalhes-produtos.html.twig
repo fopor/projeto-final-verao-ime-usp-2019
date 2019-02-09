@@ -4,15 +4,15 @@
 
 {% block body %}
 
-<h2>{{ produto.nome }}</h2>
-<img src="/images/{{ produto.imagem }}" width="500">
-<br />
-{{ produto.descricao }}
-<br /><br />
+<h1 class="h3 mb-3 font-weight-normal">{{ produto.nome }}</h1>
+<div class="text-center">  
+    <img src="/images/{{ produto.imagem }}" class="img-fluid" alt="Imagem do produto"  width="500">
+</div>
 
-R$ {{ produto.preco }}
+<h6>{{ produto.descricao }}</h6>
+<h6>R$ {{ produto.preco }}</h6>
 <br />
 <a href="/carrinho/{{ produto.id }}">
-    <input type="button" value="Comprar">
+    <button class="btn btn-lg btn-primary btn-block" type="button" value="Comprar">Comprar</button>
 </a>
 {% endblock %}

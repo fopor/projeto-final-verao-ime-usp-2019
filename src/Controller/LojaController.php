@@ -79,7 +79,6 @@ class LojaController extends AbstractController {
 			$carrinho = array();
 		}
 
-
 		return $this->render('loja/carrinho.html.twig', [
 			'carrinho' => $carrinho,
 			'total' => $total	    
@@ -98,9 +97,13 @@ class LojaController extends AbstractController {
 
 		if(is_numeric($novaQuantidade)) {
 			if (is_array($carrinho) && array_key_exists($produto->getId(), $carrinho)) {
-				$carrinho[$produto->getId()]['quantidade'] = $novaQuantidade;
-				$totalItem = $novaQuantidade * $produto->getPreco();
-				$carrinho[$produto->getId()]['total'] = $totalItem;
+				if($novaQuantidade > 0) {
+					$carrinho[$produto->getId()]['quantidade'] = $novaQuantidade;
+					$totalItem = $novaQuantidade * $produto->getPreco();
+					$carrinho[$produto->getId()]['total'] = $totalItem;
+				} else {
+					unset($carrinho[$produto->getId()]);
+				}
 			}
 		}
 

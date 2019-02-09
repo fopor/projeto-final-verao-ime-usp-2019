@@ -63,9 +63,5 @@ class ProdutoController extends AbstractController {
 			'termoDeBusca' => $termoDeBusca,
 			'produtosEncontrados' => $produtosEncontrados
 		]);
-
 	}
-
-
-	
 }

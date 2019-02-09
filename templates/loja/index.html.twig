@@ -3,19 +3,20 @@
 {% block title %}Página Inicial{% endblock %}
 
 {% block body %}
-
-<h2>Produtos em Destaque<h2>
-      <br>
-      <p>Exibindo dois grandes produtos do nosso total de {{destaque.qtdProdutos}}</p>
-      {% for item in destaque.produtosParaExibir %}
-      <BR>
-      <div class="card" style="width: 18rem;">
-        <img class="card-img-top" src="/images/{{item.imagem}}">
-        <div class="card-body">
-          <h5 class="card-title">{{item.nome}}</h5>
-          <h6 class="card-text">{{item.descricao}}</h6>
-          <a href="/produto/{{item.id}}" class="btn btn-primary">Detalhes</a>
-        </div>
-      </div>
-      {% endfor %}
+<div class="content-wrapper">
+  <h2>Produtos em Destaque<h2>
+  <br>
+  <p>Exibindo dois grandes produtos do nosso total de {{destaque.qtdProdutos}}</p>
+  {% for item in destaque.produtosParaExibir %}
+  <BR>
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="/images/{{item.imagem}}">
+    <div class="card-body">
+      <h5 class="card-title">{{item.nome}}</h5>
+      <h6 class="card-text">{{item.descricao}}</h6>
+      <a href="/produto/{{item.id}}" class="btn btn-primary">Detalhes</a>
+    </div>
+  </div>
+  {% endfor %}
+</div>
 {% endblock %}
