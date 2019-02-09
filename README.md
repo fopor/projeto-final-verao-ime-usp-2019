@@ -14,9 +14,9 @@ Iniciailize o servidor do Symfony usando o comando
 * Página Inicial:
 Arrumar a página inicial para carregar dois produtos de forma aleatória.
 
-## Tarefas a fazer:
 * Buscar Produto: Receber o POST do campo de busca de produtos e exibir os produtos que tenham o termo pesquisado no nome ou na descrição. (Ver mysql like)
 
+## Tarefas a fazer:
 * Carrinho de Compras: Permitir alterar a quantidade de um produto no carrinho de compra. Se a quantidade for 0, remover o produto do carrinho.
 
 * Cadastro de Cliente: Finalizar o cadastro de cliente, salvando o cliente no banco de dados e enviando para a página "/loja/finalizar".
