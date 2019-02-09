@@ -1,7 +1,6 @@
 <?php
 namespace App\Controller;
 
-
 use App\Repository\Banco;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -87,7 +86,36 @@ class LojaController extends AbstractController {
 		]);
 	}
 
-	
+	/**
+	* @Route("/carrinho/{id}/alterar")
+	*/
+	public function alterarItemEmCarrinho($id, SessionInterface $session, Request $request) {
+		$banco = new Banco();
+		$produto = $banco->getProduto($id);
+		$novaQuantidade = $request->request->get('quantidade', '');
+
+		$carrinho = $session->get('carrinho');
+
+		if(is_numeric($novaQuantidade)) {
+			if (is_array($carrinho) && array_key_exists($produto->getId(), $carrinho)) {
+				$carrinho[$produto->getId()]['quantidade'] = $novaQuantidade;
+				$totalItem = $novaQuantidade * $produto->getPreco();
+				$carrinho[$produto->getId()]['total'] = $totalItem;
+			}
+		}
+
+		$session->set('carrinho', $carrinho);
+
+		$total = 0;
+		foreach ($carrinho as $item) {
+			$total += $item['total'];
+		}
+		
+		$session->set('carrinho_total', $total);
+
+		return $this->redirectToRoute('app_loja_carrinho');
+	}
+
 	/**
 	* @Route("/carrinho/{id}")
 	*/

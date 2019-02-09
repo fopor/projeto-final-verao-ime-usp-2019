@@ -41,9 +41,7 @@ class ProdutoController extends AbstractController {
 	/**
 	* @Route("/busca")
 	*/
-	public function buscar() {
-		$request = Request::createFromGlobals();
-		$request->query->get('id');
+	public function buscar(Request $request) {
 		$termoDeBusca = $request->request->get('busca', '');
 
 		if($termoDeBusca == '') {
@@ -54,6 +52,12 @@ class ProdutoController extends AbstractController {
 
 		$banco = new Banco();
 		$produtosEncontrados = $banco->buscaProduto($termoDeBusca);
+
+		if(count($produtosEncontrados) == 0) {
+			return $this->render('produto/erroAoBuscar.html.twig', [
+				'DescricaoErro' => "Nenhum item correspondente encontrado!"
+			]);
+		}
 
 		return $this->render('produto/buscar.html.twig', [
 			'termoDeBusca' => $termoDeBusca,
